@@ -50,9 +50,14 @@ while (continuar) {
 }
 
 //funçoes (métodos)
-
+//function retorne
 function saudacao(nome) {
     return "Olá, " +nome + "!!!";
 }
 
 console.log(saudacao("Maria"));
+
+// function  void -> return vazio
+function hello(nome){
+    console.log("Hello, World!!!")
+}
