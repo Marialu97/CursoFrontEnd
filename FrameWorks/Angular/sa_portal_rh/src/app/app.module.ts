@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FootersComponent } from './template/footers/footers.component';
-import { InicioComponent } from './pages/inicio/inicio.component';
-import { ProdutosComponent } from './pages/produtos/produtos.component';
-import { ContatoComponent } from './pages/contato/contato.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InicioComponent } from './view/inicio/inicio.component';
+import { VagasComponent } from './view/vagas/vagas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PainelVagasComponent } from './view/painel-vagas/painel-vagas.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { ContatoComponent } from './pages/contato/contato.component';
     HeaderComponent,
     FootersComponent,
     InicioComponent,
-    ProdutosComponent,
-    ContatoComponent
+    VagasComponent,
+    PainelVagasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
