@@ -164,6 +164,12 @@ painel-vagas.component.ts
 
 
 
+EXERCICIO:
+
+	
+
+
+
 
 
 
