@@ -47,7 +47,8 @@
     }
 
     // froMap API -> Obj 
-    fromMap(map:any):Vaga{
+    //static ele conta a clase 
+    static fromMap(map:any):Vaga{
         return new Vaga(
             map.id,
             map.nome,

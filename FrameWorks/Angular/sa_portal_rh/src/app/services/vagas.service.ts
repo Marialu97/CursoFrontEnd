@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'; // fazer solicitação para uma api
+import { Observable } from 'rxjs'; //traduzir as informaçao da api
 import { Vaga } from '../models/vaga.model';
 
 @Injectable({
@@ -25,7 +25,7 @@ export class VagasService {
   }
     // put -update
     atualizarVaga(id: any, vaga:Vaga): Observable<Vaga[]>{
-        const urlAtualizado = `${this.apiUrl}/${id}`;
+        const urlAtualizado = `${this.apiUrl}/${id}`; //atualiza o id
         return this.http.put<Vaga[]>(urlAtualizado, vaga);
     }
 

@@ -37,11 +37,42 @@ export class PainelVagasComponent implements OnInit {
 
   
   // Listar unica Vaga 
+  listarVagaUnica(vaga:Vaga){
+    // Função para listar vaga Uint8ClampedArray, para edição no formulario 
+    this.vaga = vaga;
+    // A vaga cricada é mostrada no formulário , => 
+  }
 
   // cadastrar Vaga 
+  cadastrar(){
+    this._vagasService.cadastrarVaga(this.vaga).subscribe(
+      ()=> {
+        this.vaga = new Vaga(0, "","","",0); //limpara os campos do formulário
+        this.listarVagas();
+        alert("Vaga Cadastrada com Sucesso");
+      }, (err) => { console.error("Exceptio:", err);}
+    );
+  }
 
   // atualizar Vagas 
+  atualizar(id:any){
+    this._vagasService.atualizarVaga(id, this.vaga).subscribe(
+      ()=>{
+        this.vaga = new Vaga(0,"","","",0);
+        this.listarVagas();
+        alert("Vaga Atualizada com Sucesso!!!");
+      }, (err) => {console.error("Exception: ",err);}
+    );
+  }
 
-  // deletar Vagas 
+  //deletar Vagas
+  excluir(id:any){
+    this._vagasService.removerVaga(id).subscribe(
+      ()=>{
+        this.listarVagas();
+        alert("Vaga Deletada com Sucesso!!!");
+      }, (err) => {console.error("Exception: ",err);}
+    );
+  }
 
 }

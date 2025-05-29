@@ -125,6 +125,42 @@ painel-vagas
 painel-vagas.component.ts
 	ESCREVE DENTRO 
 
+	 TERMINAL
+	   npx json-server --watch backend/db.json --port 3010       
+
+	RESUMO 
+			models 
+			vaga.model.ts = deixa tudo publico
+			services
+			vagas.service.ts
+			view
+			vagas
+			vagas.component.ts
+			painel-vagas
+			painel-vagas.component.html
+			 	ESCREVE DENTRO 
+
+	TERMINAL
+		abre um novo 
+		npm start 
+	vai no link gerado e segura e netra 
+	esse roda a pagina 
+
+			vagas.component.ts
+			painel-vagas
+				ESCREVE DENTRO
+			painel-vagas
+			painel-vagas.component.html
+			 	ESCREVE DENTRO
+
+			app.module.ts
+			ESCREVE DENTRO 	UMA LINHA
+			app-routing.module.ts
+			ESCREVE DENTRO 	UMA LINHA
+
+			painel-vagas
+			painel-vagas.component.scss
+			ESCREVE DENTRO
 
 
 

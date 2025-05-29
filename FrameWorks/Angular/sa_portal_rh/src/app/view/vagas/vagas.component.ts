@@ -17,7 +17,7 @@ export class VagasComponent implements OnInit{
   }
 
   listarVagas() {
-    this._vagaService.getVagas().subscribe(
+    this._vagaService.getVagas().subscribe( 
       (retornaVaga) => {
         this.vagas = retornaVaga.map(
           (item) => {
