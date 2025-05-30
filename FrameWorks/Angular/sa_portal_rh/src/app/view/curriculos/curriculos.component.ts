@@ -7,7 +7,7 @@ import { CurriculosService } from 'src/app/services/curriculos.service';
   templateUrl: './curriculos.component.html',
   styleUrls: ['./curriculos.component.scss']
 })
-export class CurriculosComponent implements OnInit{
+export class CurriculosComponent implements OnInit {
   public curriculos: Curriculo[] = [];
 
   constructor(private _curriculoService: CurriculosService) {}
@@ -24,15 +24,18 @@ export class CurriculosComponent implements OnInit{
             return new Curriculo(
               item.cpf,
               item.nome,
-              item.foto,
-              item.descricao,
-              item.salario,
-              item
+              item.email,
+              item.idade,
+              item.endereco,
+              item.formacao,
+              item.telefone,
+              item.habilidades,
+              item.portfolio,
+              item.foto
             );
           }
         );
       }
-    )
+    );
   }
-
 }

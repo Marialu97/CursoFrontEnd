@@ -22,11 +22,66 @@
       "salario": 10000
     },
     {
-      "id": 7,
+      "id": "4",
       "nome": "Engenheiro de Nuvem",
       "foto": "foto7.jpg",
       "descricao": "Trabalhar com Nuvem AWS",
       "salario": 1000
     }
+  ],
+
+  
+  "curriculos": [
+    {
+      "cpf": "123.456.789-00",
+      "nome": "Anick Da Silva",
+      "email": "anick.silva@email.com",
+      "idade": 22,
+      "endereco": "Rua das Flores, 123 - São Paulo",
+      "formacao": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "telefone": "(11) 91234-5678",
+      "habilidades": "HTML, CSS, JavaScript, Angular",
+      "portfolio": "https://anasilva.dev",
+      "foto": "ana.jpg"
+    },
+    {
+      "cpf": "987.654.321-00",
+      "nome": "Isabela Ramos",
+      "email": "isabela.ramos@email.com",
+      "idade": 17,
+      "endereco": "Av. Paulista, 456 - São Paulo",
+      "formacao": "Bacharel em Engenharia da Computação",
+      "telefone": "(11) 99876-5432",
+      "habilidades": "Node.js, Express, MongoDB, APIs REST",
+      "portfolio": "https://brunosouza.dev",
+      "foto": "bruno.jpg"
+    },
+    {
+      "cpf": "111.222.333-44",
+      "nome": "Juyla Estrela",
+      "email": "juyla.estrela@email.com",
+      "idade": 28,
+      "endereco": "Rua do Sol, 789 - Belo Horizonte",
+      "formacao": "Bacharel em Ciência da Computação",
+      "telefone": "(31) 93456-7890",
+      "habilidades": "React, TypeScript, UI/UX Design",
+      "portfolio": "https://carlaoliveira.dev",
+      "foto": "carla.jpg"
+    },
+    {
+      "cpf": "555.666.777-88",
+      "nome": "Maria Luiza",
+      "email": "maria.luiza@email.com",
+      "idade": 24,
+      "endereco": "Av. das Américas, 1000 - Rio de Janeiro",
+      "formacao": "Mestre em Sistemas de Informação",
+      "telefone": "(21) 97890-1234",
+      "habilidades": "AWS, Docker, Kubernetes, CI/CD",
+      "portfolio": "https://diegomartins.dev",
+      "foto": "diego.jpg"
+    }
   ]
 }
+
+
+
