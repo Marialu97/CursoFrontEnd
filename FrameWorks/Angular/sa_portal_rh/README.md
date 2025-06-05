@@ -166,6 +166,37 @@ painel-vagas.component.ts
 
 EXERCICIO:
 
+POBLEMAS ENCONTRADOS 
+ botao de excluir
+ campo esta cadastrando vaziuo 
+
+
+  ngOnInInit(): void {}
+
+  
+  // Cadastrar Curriculo 
+  public cadastrar(): void {
+    if (
+      !this.curriculo.cpf ||
+      !this.curriculo.nome ||
+      !this.curriculo.email ||
+      !this.curriculo.idade ||
+      !this.curriculo.endereco ||
+      !this.curriculo.formacao ||
+      !this.curriculo.telefone ||
+      !this.curriculo.habilidades ||
+      !this.curriculo.portfolio ||
+      !this.curriculo.foto ||
+    ) {
+      alert("Por favor preencha todos os campos vazio");
+      return;
+    }
+  } 
+  esse codigo tem que colocar para nao permitir os campos vazio
+
+  o poblema do botao é que eu tenho que voutar o cpf para id  e depois trasformar o id para cpf para o botao de remover ir 
+
+
 	
 
 

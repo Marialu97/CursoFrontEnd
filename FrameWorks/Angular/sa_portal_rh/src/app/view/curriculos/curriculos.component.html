@@ -2,7 +2,7 @@
   <!-- property do data binding *ngFor -->
   <div *ngFor="let curriculo of curriculos">
     <div class="card">
-      <img src="assets\img\curriculos\{{curriculo.foto}}" alt="...">
+      <img [src]="curriculo.foto" [alt]="'foto de ' + 'curriculo.nome'" [title]="'foto de curriculo' + 'curriculo.nome '">
       <div class="card-body">
         <h4 class="card-title">Curriculo</h4>
         <h5 class="card-title">Cpf: {{curriculo.cpf}}</h5>
@@ -14,7 +14,6 @@
         <p class="card-text">Telefone: {{curriculo.telefone}}</p>
         <p class="card-text">Habilidades: {{curriculo.habilidades}}</p>
         <p class="card-text">Portfolio: {{curriculo.portfolio}}</p>
-        <p class="card-text">Foto: {{curriculo.foto}}</p>
       </div>
     </div>
   </div>
