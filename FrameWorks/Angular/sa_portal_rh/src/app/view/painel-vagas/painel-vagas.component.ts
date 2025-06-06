@@ -45,6 +45,18 @@ export class PainelVagasComponent implements OnInit {
 
   // cadastrar Vaga 
   cadastrar(){
+
+ if (
+    !this.vaga.id ||
+    !this.vaga.nome ||
+    !this.vaga.foto ||
+    !this.vaga.descricao ||
+    !this.vaga.salario 
+  ) {
+    alert('Por favor, preencha todos os campos antes de cadastrar!');
+    return;
+  }
+
     this._vagasService.cadastrarVaga(this.vaga).subscribe(
       ()=> {
         this.vaga = new Vaga(0, "","","",0); //limpara os campos do formulário

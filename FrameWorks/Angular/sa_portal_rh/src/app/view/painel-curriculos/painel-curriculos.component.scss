@@ -98,13 +98,9 @@ section {
     }
   }
   tbody {
-    tr {
-      &:hover {
-        background-color: lighten($color: #999, $amount: 5%);
-      }
-    }
 
     .btn-listar {
+      color: #ffffff;
       border: none;
       background-color: $secundaria;
       padding: 5px 10px;
@@ -115,6 +111,19 @@ section {
         background-color: darken($color: $alerta, $amount: 10%);
       }
     }
+  }
+}
+
+.btn-excluir {
+  color: #ffffff;
+  border: none;
+  background-color: $secundaria;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken($color: $perigo, $amount: 10%);
   }
 }
 

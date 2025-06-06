@@ -1,80 +1,86 @@
 <h2>Cadastrar Curriculo</h2>
-<form action="">
-  <label>Cpf</label>
-  <input type="text" name="cpf" [(ngModel)]="curriculo.cpf"> <br>
+<br>
+<form #form="ngForm">
+  <label>CPF</label>
+  <input type="text" name="id" [(ngModel)]="curriculo.id" require> <br>
 
   <label>Nome</label>
-  <input type="text" name="nome" [(ngModel)]="curriculo.nome"> <br>
+  <input type="text" name="nome" [(ngModel)]="curriculo.nome" require> <br>
 
   <label>Email</label>
-  <input type="email" name="email" [(ngModel)]="curriculo.email"> <br>
+  <input type="email" name="email" [(ngModel)]="curriculo.email" require> <br>
 
   <label>Idade</label>
-  <input type="number" name="idade" [(ngModel)]="curriculo.idade"> <br>
+  <input type="number" name="idade" [(ngModel)]="curriculo.idade" require> <br>
 
-    <label>Endereco</label>
-  <input type="text" name="endereco" [(ngModel)]="curriculo.endereco">
-  
-   <label>Formacao</label>
-  <input type="text" name="formacao" [(ngModel)]="curriculo.formacao"><br>
+  <label>Endereco</label>
+  <input type="text" name="endereco" [(ngModel)]="curriculo.endereco" require>
+
+  <label>Formacao</label>
+  <input type="text" name="formacao" [(ngModel)]="curriculo.formacao" require><br>
 
   <label>Telefone</label>
-  <input type="text" name="telefone" [(ngModel)]="curriculo.telefone"> <br>
+  <input type="text" name="telefone" [(ngModel)]="curriculo.telefone" require> <br>
 
   <label>Habilidades</label>
-  <input type="text" name="habilidades" [(ngModel)]="curriculo.habilidades"> <br>
+  <input type="text" name="habilidades" [(ngModel)]="curriculo.habilidades" require> <br>
 
   <label>Portfolio</label>
-  <input type="text" name="portfolio" [(ngModel)]="curriculo.portfolio"> <br>
+  <input type="text" name="portfolio" [(ngModel)]="curriculo.portfolio" require> <br>
 
-  <label>Foto</label>
-  <input type="text" name="foto" [(ngModel)]="curriculo.foto"> <br>
+<label>Foto</label>
+  <input type="file" name="foto" [(ngModel)]="curriculo.foto" require/><br />
 
-  <button type="button" (click)="cadastrar()">Cadastrar Curriculo</button>
-  <button type="button" (click)="atualizar(curriculo.cpf)">Atualizar Curriculo</button>
-  <button type="button" (click)="excluir(curriculo.cpf)">Excluir Curriculo</button>
+  <button type="button" (click)="cadastrar()" [disabled]="!form.valid">Cadastrar Curriculo</button>
+  <button type="button" (click)="atualizar(curriculo.id)">Atualizar Curriculo</button>
+  <button type="button" (click)="excluir(curriculo.id)">Excluir Curriculo</button>
 
 </form>
 
 <!-- tabela com as vagas já cadastradas -->
- <section class="listar-curriculos">
+<section class="listar-curriculos">
   <table class="table">
     <thead>
       <tr>
-        <th></th>
-        <th>Cpf</th>
+        <th>CPF</th>
         <th>Nome </th>
         <th>Email</th>
         <th>Idade</th>
-         <th>Endereco</th>         
-         <th>Formacao</th>         
-         <th>Telefone</th>         
-         <th>Habilidades</th>
-         <th>Portfolio</th>
-         <th>Ação</th>
+        <th>Endereco</th>
+        <th>Formacao</th>
+        <th>Telefone</th>
+        <th>Habilidades</th>
+        <th>Portfolio</th>
+        <th>Ação</th>
       </tr>
     </thead>
     <tbody>
       <tr class="vaga-row" *ngFor="let curriculo of curriculos">
-        <td>{{curriculo.cpf}}</td>
+        <td>{{curriculo.id}}</td>
         <td>{{curriculo.nome}}</td>
         <td>{{curriculo.email}}</td>
         <td>{{curriculo.idade}}</td>
-        <td>{{curriculo.endereco}}</td>        
-        <td>{{curriculo.formacao}}</td>        
-        <td>{{curriculo.telefone}}</td>       
-        <td>{{curriculo.habilidades}}</td>        
-        <td>{{curriculo.portfolio}}</td>         
-        
+        <td>{{curriculo.endereco}}</td>
+        <td>{{curriculo.formacao}}</td>
+        <td>{{curriculo.telefone}}</td>
+        <td>{{curriculo.habilidades}}</td>
+        <td>{{curriculo.portfolio}}</td>
 
-        <td>
-          <button class="btn-listar" type="button" (click)="listarCurriculoUnico(curriculo)">Listar</button>
-        </td>
+        <br>
+
+        <button type="button" (click)="listarCurriculoUnico(curriculo)" class="btn-listar">
+          Listar
+        </button>
+
+        <br>
+        <br>
+
+        <button type="button" (click)="excluir(curriculo.id)" class="btn-excluir">
+          Excluir
+        </button>
       </tr>
     </tbody>
   </table>
- </section>
+</section>
 
- <div class="rodape"></div>
-
-
+<div class="rodape"></div>

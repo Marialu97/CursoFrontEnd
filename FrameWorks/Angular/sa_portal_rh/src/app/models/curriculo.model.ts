@@ -1,7 +1,7 @@
  export class Curriculo {
 
   constructor(
-    public cpf: string,
+    public id: string,
     public nome: string,
     public email: string,
     public idade: number,
@@ -17,7 +17,7 @@
 
   toMao(): {[key:string]:any} {
         return{
-            cpf: this.cpf,
+            cpf: this.id,
             nome: this.nome,
             email: this.email,
             idade: this.idade,
@@ -32,7 +32,7 @@
 
         static fromMap(map:any):Curriculo{
         const curriculo = new Curriculo(
-            map.cpf,
+            map.id,
             map.nome,
             map.email,
             map.idade,

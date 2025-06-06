@@ -8,7 +8,7 @@ import { CurriculosService } from 'src/app/services/curriculos.service';
   styleUrls: ['./painel-curriculos.component.scss'],
 })
 export class PainelCurriculosComponent implements OnInit {
-  public curriculo: Curriculo = new Curriculo(  '', '', '', 0, '', '', '', '', '', ''); // rastrear os dados no formulário por interpolação
+  public curriculo: Curriculo = new Curriculo( "", '', '', 0, '', '', '', '', '', ''); // rastrear os dados no formulário por interpolação
 
   public curriculos: Curriculo[] = [];
   // armazenar os dados do API -json
@@ -25,7 +25,7 @@ export class PainelCurriculosComponent implements OnInit {
       this.curriculos = retornaCurriculo.map((item) => {
         // Mapeia os dados retornados para objetos 'Curriculo'
         return new Curriculo(
-              item.cpf,
+              item.id,
               item.nome,
               item.email,
               item.idade,
@@ -49,9 +49,26 @@ export class PainelCurriculosComponent implements OnInit {
 
   // cadastrar Currículo 
   cadastrar() {
+
+    if (
+    !this.curriculo.id ||
+    !this.curriculo.nome ||
+    !this.curriculo.email ||
+    !this.curriculo.idade ||
+    !this.curriculo.endereco ||
+    !this.curriculo.formacao ||
+    !this.curriculo.telefone ||
+    !this.curriculo.habilidades ||
+    !this.curriculo.portfolio ||
+    !this.curriculo.foto
+  ) {
+    alert('Por favor, preencha todos os campos antes de cadastrar!');
+    return;
+  }
+
     this._curriculosService.cadastrarCurriculo(this.curriculo).subscribe(
       () => {
-        this.curriculo = new Curriculo(  '', '', '', 0, '', '', '', '', '', ''); // limpar os campos do formulário
+        this.curriculo = new Curriculo( "", '', '', 0, '', '', '', '', '', ''); // limpar os campos do formulário
         this.listarCurriculos();
         alert('Currículo Cadastrado com Sucesso');
       },
@@ -61,11 +78,18 @@ export class PainelCurriculosComponent implements OnInit {
     );
   }
 
+  handleFileInput(event: any) {
+  const file = event.target.files[0];
+  if (file) {
+    this.curriculo.foto = file.name; // ou você pode armazenar o próprio `file`
+  }
+}
+
   // atualizar Currículos 
-  atualizar(cpf: any) {
-    this._curriculosService.atualizarCurriculo(cpf, this.curriculo).subscribe(
+  atualizar(id: any) {
+    this._curriculosService.atualizarCurriculo(id,this.curriculo).subscribe(
       () => {
-        this.curriculo = new Curriculo(  '', '', '', 0, '', '', '', '', '', '');
+        this.curriculo = new Curriculo( "", "", "", 0, "", "", "", "", "", "");
         this.listarCurriculos();
         alert('Currículo Atualizado com Sucesso!!!');
       },
@@ -76,9 +100,10 @@ export class PainelCurriculosComponent implements OnInit {
   }
 
   // deletar Currículos
-  excluir(cpf: any) {
-    this._curriculosService.removerCurriculo(cpf).subscribe(
+  excluir(id: any) {
+    this._curriculosService.removerCurriculo(id).subscribe(
       () => {
+        this.curriculo = new Curriculo( "", "", "", 0, "", "", "", "", "", "");
         this.listarCurriculos();
         alert('Currículo Deletado com Sucesso!!!');
       }, (err) => {
