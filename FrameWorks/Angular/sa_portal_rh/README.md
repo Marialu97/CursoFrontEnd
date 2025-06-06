@@ -1,5 +1,3 @@
-222222222222222222222222222222223333333333333333333
-
 TERMINAL
 
 npx ng new sa_portal_rh --routing --style=scss
@@ -199,16 +197,9 @@ POBLEMAS ENCONTRADOS
   o poblema do botao é que eu tenho que voutar o cpf para id  e depois trasformar o id para cpf para o botao de remover ir 
 
 
-	
 
 
-
-
-
-
-
-
-
+Terminei meu amor, agr ta tudo certinho 	
 
 
 
